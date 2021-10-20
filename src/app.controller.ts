@@ -1,4 +1,5 @@
 import { Controller, Get, Post, Render, Req, Res, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { Request, Response } from 'express';
 import { AppService } from './app.service';
 import { AuthenticatedGuard } from './common/guards/authenticated.guard';
@@ -24,6 +25,16 @@ export class AppController {
   logout(@Req() req: Request, @Res() res: Response) {
     req.logout()
     res.redirect('/');
+  }
+
+  @UseGuards(AuthGuard('discord'))
+  @Get('/auth/discord')
+  authDiscord() {}
+
+  @UseGuards(AuthGuard('discord'))
+  @Get('/auth/discord/callback')
+  authDiscordCallback(@Res() res: Response) {
+    res.redirect('/home');
   }
 
   @UseGuards(AuthenticatedGuard)
