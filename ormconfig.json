@@ -1,0 +1,15 @@
+{
+  "type": "postgres",
+  "host": "127.0.0.1",
+  "port": 25432,
+  "username": "dev",
+  "password": "dev",
+  "database": "dev",
+  "synchronize": false,
+  "entities": ["dist/**/*.entity{.ts,.js}"],
+  "migrations": ["dist/migration/**/*.js"],
+  "cli": {
+    "entitiesDir": "src/**/*.entity.ts",
+    "migrationsDir": "src/migration"
+  }
+}
