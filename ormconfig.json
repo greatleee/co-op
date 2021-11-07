@@ -6,10 +6,10 @@
   "password": "dev",
   "database": "dev",
   "synchronize": false,
-  "entities": ["dist/**/*.entity{.ts,.js}"],
-  "migrations": ["dist/migration/**/*.js"],
+  "entities": ["dist/_entity/**/*{.ts,.js}"],
+  "migrations": ["dist/_migration/**/*.js"],
   "cli": {
-    "entitiesDir": "src/**/*.entity.ts",
-    "migrationsDir": "src/migration"
+    "entitiesDir": "src/_entity",
+    "migrationsDir": "src/_migration"
   }
 }
